@@ -44,6 +44,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dodge/proprietary/odm/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_100nits_pGC.txt:$(TARGET_COPY_OUT_ODM)/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_100nits_pGC.txt \
     vendor/oneplus/dodge/proprietary/odm/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_2nits_pGC.txt:$(TARGET_COPY_OUT_ODM)/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_2nits_pGC.txt \
     vendor/oneplus/dodge/proprietary/odm/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_pGC.txt:$(TARGET_COPY_OUT_ODM)/etc/PanelChaplin/AA569_P_3_A0019_dsc_cmd_mode_panel_Vivid_pGC.txt \
+    vendor/oneplus/dodge/proprietary/odm/etc/PanelChaplin/panelchaplin:$(TARGET_COPY_OUT_ODM)/etc/PanelChaplin/panelchaplin \
     vendor/oneplus/dodge/proprietary/odm/etc/acdbdata/up_ve_enpuv5_ha.eai:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/up_ve_enpuv5_ha.eai \
     vendor/oneplus/dodge/proprietary/odm/etc/acdbdata/up_ve_enpuv5_hh.eai:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/up_ve_enpuv5_hh.eai \
     vendor/oneplus/dodge/proprietary/odm/etc/camera/AIAEVideoModel.bin:$(TARGET_COPY_OUT_ODM)/etc/camera/AIAEVideoModel.bin \
