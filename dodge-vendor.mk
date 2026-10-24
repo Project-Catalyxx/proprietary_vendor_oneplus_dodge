@@ -802,6 +802,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dodge/proprietary/odm/etc/init/init.camera_process.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.camera_process.rc \
     vendor/oneplus/dodge/proprietary/odm/etc/init/init.camera_upate.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.camera_upate.rc \
     vendor/oneplus/dodge/proprietary/odm/etc/init/vendor.oplus.hardware.cammidasservice-V1-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.cammidasservice-V1-service.rc \
+    vendor/oneplus/dodge/proprietary/odm/etc/media_codecs_dolby_vision.xml:$(TARGET_COPY_OUT_ODM)/etc/media_codecs_dolby_vision.xml \
     vendor/oneplus/dodge/proprietary/odm/etc/mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/etc/mixer_paths.xml \
     vendor/oneplus/dodge/proprietary/odm/etc/oprec_audrec_params/oprec_audrec_config.txt:$(TARGET_COPY_OUT_ODM)/etc/oprec_audrec_params/oprec_audrec_config.txt \
     vendor/oneplus/dodge/proprietary/odm/etc/oprec_audrec_params/oprec_camback_calibration.bin:$(TARGET_COPY_OUT_ODM)/etc/oprec_audrec_params/oprec_camback_calibration.bin \
@@ -1078,7 +1079,9 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dodge/proprietary/odm/lib64/camera/libpdCustomParam_Cam2.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/libpdCustomParam_Cam2.bin \
     vendor/oneplus/dodge/proprietary/odm/lib64/camera/libpdCustomParam_Cam3.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/libpdCustomParam_Cam3.bin \
     vendor/oneplus/dodge/proprietary/odm/lib64/camera/revision.txt:$(TARGET_COPY_OUT_ODM)/lib64/camera/revision.txt \
+    vendor/oneplus/dodge/proprietary/product/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/dolby_vision.cfg \
     vendor/oneplus/dodge/proprietary/product/etc/permissions/privapp-permissions-euiccgoogle.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-euiccgoogle.xml \
+    vendor/oneplus/dodge/proprietary/system/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_SYSTEM)/etc/dolby_vision.cfg \
     vendor/oneplus/dodge/proprietary/vendor/etc/acdbdata/sun_mtp/acdb_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/sun_mtp/acdb_cal.acdb \
     vendor/oneplus/dodge/proprietary/vendor/etc/display/sdm_display_resolution_extn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/sdm_display_resolution_extn.xml \
     vendor/oneplus/dodge/proprietary/vendor/etc/display_apollo_list_AA569_P_3_A0019_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_apollo_list_AA569_P_3_A0019_dsc_cmd_mode_panel.xml \
@@ -1086,6 +1089,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dodge/proprietary/vendor/etc/display_dbvgain_config_v2_AA569_P_3_A0019_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_dbvgain_config_v2_AA569_P_3_A0019_dsc_cmd_mode_panel.xml \
     vendor/oneplus/dodge/proprietary/vendor/etc/display_demura_config_AA569_P_3_A0019_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_demura_config_AA569_P_3_A0019_dsc_cmd_mode_panel.xml \
     vendor/oneplus/dodge/proprietary/vendor/etc/display_demura_config_v2_AA569_P_3_A0019_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_demura_config_v2_AA569_P_3_A0019_dsc_cmd_mode_panel.xml \
+    vendor/oneplus/dodge/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg \
     vendor/oneplus/dodge/proprietary/vendor/etc/init/vendor.qti.camera.provider-service_64.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.camera.provider-service_64.rc \
     vendor/oneplus/dodge/proprietary/vendor/etc/ltm_config_AA569_P_3_A0019_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_AA569_P_3_A0019_dsc_cmd_mode_panel.xml \
     vendor/oneplus/dodge/proprietary/vendor/etc/media_codecs_dolby_vision.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_vision.xml \
@@ -1186,7 +1190,8 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dodge/proprietary/vendor/lib64/camera/fdconfigvideolite.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/fdconfigvideolite.bin \
     vendor/oneplus/dodge/proprietary/vendor/lib64/camera/imx480_3.pb:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/imx480_3.pb \
     vendor/oneplus/dodge/proprietary/vendor/lib64/camera/imx615_3.pb:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/imx615_3.pb \
-    vendor/oneplus/dodge/proprietary/vendor/lib64/camera/qfdserviceconfig.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/qfdserviceconfig.bin
+    vendor/oneplus/dodge/proprietary/vendor/lib64/camera/qfdserviceconfig.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/qfdserviceconfig.bin \
+    vendor/oneplus/dodge/proprietary/vendor/persist/display/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/persist/display/dolby_vision.cfg
 
 PRODUCT_PACKAGES += \
     com.qti.eeprom.gt24p128c2csli_imx766 \
@@ -1459,10 +1464,14 @@ PRODUCT_PACKAGES += \
     libswregistrationalgo \
     libtfestriping \
     libubifocus \
+    libui-stock \
+    libutils-stock \
     libvideoml \
     sensors.qsh \
     vendor.qti.hardware.camera.aon-service-impl \
     vendor.qti.hardware.camera.offlinecamera-service-impl \
+    libdolbyeffect_4.1 \
+    liboplusdolbyeffect_4.1 \
     com.qti.sensor.dodgefront \
     com.qti.sensor.dodgemain \
     com.qti.sensor.dodgetele \
@@ -1500,6 +1509,7 @@ PRODUCT_PACKAGES += \
     libCaptureBokeh \
     libDocRectification \
     libEIS \
+    libEISLive \
     libFDClite \
     libFaceBeautyJni \
     libFaceBeautyPre \
